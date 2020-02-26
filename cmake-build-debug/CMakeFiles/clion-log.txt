@@ -1,0 +1,6 @@
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/tzenz/ft_printfv2
+-- Configuring done
+CMake Error: Cannot open file for write: /Users/tzenz/ft_printfv2/cmake-build-debug/CMakeCache.txt.tmp
+CMake Error: : System Error: No space left on device
+CMake Error: Unable to open cache file for save. /Users/tzenz/ft_printfv2/cmake-build-debug/CMakeCache.txt
+CMake Error: : System Error: No space left on device

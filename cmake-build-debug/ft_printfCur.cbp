@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="ft_printfCur"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/tzenz/ft_printfCur/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/tzenz/ft_printfCur/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/tzenz/ft_printfCur/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/tzenz/ft_printfCur/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/tzenz/ft_printfCur/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/tzenz/ft_printfCur/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/tzenz/ft_printfCur/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/tzenz/ft_printfCur/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/tzenz/ft_printfCur/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/tzenz/ft_printfCur/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/tzenz/ft_printfCur/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/tzenz/ft_printfCur/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/tzenz/ft_printfCur/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/tzenz/ft_printfCur/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/tzenz/ft_printfCur/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ft_printfCur">
+				<Option output="/Users/tzenz/ft_printfCur/cmake-build-debug/ft_printfCur" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/tzenz/ft_printfCur/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/tzenz/ft_printfCur/include"/>
+					<Add directory="/Users/tzenz/ft_printfCur/pft/src"/>
+					<Add directory="/Users/tzenz/ft_printfCur/srcs/libft/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/tzenz/ft_printfCur/cmake-build-debug/Makefile&quot;  VERBOSE=1 ft_printfCur"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/tzenz/ft_printfCur/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/tzenz/ft_printfCur/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/tzenz/ft_printfCur/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ft_printfCur/fast">
+				<Option output="/Users/tzenz/ft_printfCur/cmake-build-debug/ft_printfCur" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/tzenz/ft_printfCur/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/tzenz/ft_printfCur/include"/>
+					<Add directory="/Users/tzenz/ft_printfCur/pft/src"/>
+					<Add directory="/Users/tzenz/ft_printfCur/srcs/libft/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/tzenz/ft_printfCur/cmake-build-debug/Makefile&quot;  VERBOSE=1 ft_printfCur/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/tzenz/ft_printfCur/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/tzenz/ft_printfCur/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/tzenz/ft_printfCur/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/tzenz/ft_printfCur/include/ft_printf.h">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/pft/configurations/42fc/unit_tests.42fc.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/pft/src/help.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/pft/src/help.h">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/pft/src/help_conf.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/pft/src/history.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/pft/src/main.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/pft/src/options.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/pft/src/print.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/pft/src/show_disabled_postprocess.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/pft/src/test.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/pft/src/test.h">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/pft/src/unit_tests_indexed.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/pft/src/utils.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/pft/unit_tests.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/ft_printf/ft_printf.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/ft_printf/ft_putbyte.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/ft_printf/other_function.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/ft_printf/parse_format.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/ft_printf/parse_specifier.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/ft_printf/print_char_str.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/ft_printf/print_double.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/ft_printf/print_hex_oct.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/ft_printf/print_int.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/ft_printf/print_percent.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/ft_printf/print_signed_int2.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/ft_printf/print_utf.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/ft_atoi.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/ft_atoi_base.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/ft_bzero.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/ft_countptr.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/ft_cpyptrn.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/ft_isalnum.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/ft_isalpha.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/ft_isascii.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/ft_isdigit.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/ft_isprint.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/ft_itoa.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/ft_lstadd.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/ft_lstdel.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/ft_lstdelone.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/ft_lstiter.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/ft_lstmap.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/ft_lstnew.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/ft_memalloc.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/ft_memccpy.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/ft_memchr.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/ft_memcmp.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/ft_memcpy.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/ft_memdel.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/ft_memmove.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/ft_memset.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/ft_pow.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/ft_putchar.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/ft_putchar_fd.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/ft_putendl.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/ft_putendl_fd.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/ft_putnbr.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/ft_putnbr_fd.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/ft_putsstr.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/ft_putstr.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/ft_putstr_fd.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/ft_sqrt.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/ft_strcat.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/ft_strchr.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/ft_strchrs.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/ft_strclr.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/ft_strcmp.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/ft_strcpy.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/ft_strdel.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/ft_strdup.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/ft_strequ.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/ft_striter.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/ft_striteri.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/ft_strjoin.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/ft_strlcat.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/ft_strlen.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/ft_strmap.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/ft_strmapi.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/ft_strncat.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/ft_strncmp.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/ft_strncpy.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/ft_strnequ.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/ft_strnew.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/ft_strnstr.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/ft_strrchr.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/ft_strsplit.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/ft_strsplitc.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/ft_strstr.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/ft_strsub.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/ft_strsubchr.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/ft_strtrim.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/ft_strtrims.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/ft_tolower.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/ft_toupper.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/get_next_line.c">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/srcs/libft/include/libft.h">
+			<Option target="ft_printfCur"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfCur/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

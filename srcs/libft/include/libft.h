@@ -39,7 +39,7 @@ int					ft_atoi_base(char *nb, int base);
 
 char				*ft_strchrs(const char *s, int c);
 char				*ft_strsubchr(const char *s, char c);
-double				ft_pow(double num, int pow);
+uintmax_t			ft_pow(int base, int pwr);
 double				ft_sqrt(double num);
 char				**ft_cpyptrn(char **field, char **before);
 int					ft_countptr(char **s);

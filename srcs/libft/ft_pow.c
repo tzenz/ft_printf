@@ -12,28 +12,14 @@
 
 #include "include/libft.h"
 
-double		ft_pow(double num, int pow)
+uintmax_t		ft_pow(int base, int pwr)
 {
-	double	res;
-	int		n;
+	uintmax_t res;
 
 	res = 1;
-	if (!pow)
+	if (base == 0)
 		return (1);
-	if (pow < 0)
-	{
-		n = -1;
-		pow *= -1;
-	}
-	else
-		n = 1;
-	while (pow != 0)
-	{
-		res *= num;
-		pow--;
-	}
-	if (n < 0)
-		return (1 / res);
-	else
-		return (res);
+	while (pwr--)
+		res *= base;
+	return (res);
 }

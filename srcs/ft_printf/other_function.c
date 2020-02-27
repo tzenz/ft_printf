@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-void		flushBuffer(s_fwpls *st)
+void		freeBuffer(s_fwpls *st)
 {
 	write(st->fd, st->buff, st->lenBuff);
 	st->lenBuff = 0;
@@ -39,32 +39,31 @@ void		buff(s_fwpls *st, const void *s, size_t nbyte)
                 nbyte--;
 			}
 			if ((BUF_SIZE - st->lenBuff) < 1)
-				flushBuffer(st);
+				freeBuffer(st);
 		}
 }
 
-void		pad(s_fwpls *st, int pad_len, char pad_char)
+void		pad(s_fwpls *st, int padLen, char padChar)
 {
-	char 	*pad_str;
+	char 	*padStr;
 
-	pad_str = NULL;
-	if (pad_len > 0)
+	if (padLen > 0)
 	{
-		if ((pad_str = ft_strnew(pad_len)))
+		if ((padStr = ft_strnew(padLen)))
 		{
-			ft_memset(pad_str, pad_char, (size_t)pad_len);
-			buff(st, pad_str, pad_len);
-			free(pad_str);
+			ft_memset(padStr, padChar, (size_t)padLen);
+			buff(st, padStr, padLen);
+			free(padStr);
 		}
 	}
 }
 
-void		padWidth(s_fwpls *st, int arg_width)
+void		padWidth(s_fwpls *st, int argWidth)
 {
-	int 	final_pad_width;
+	int 	padWidth;
 
-	final_pad_width = st->width - arg_width;
-	pad(st, final_pad_width, ' ');
+	padWidth = st->width - argWidth;
+	pad(st, padWidth, ' ');
 }
 
 void		resetPrintf(s_fwpls *st)

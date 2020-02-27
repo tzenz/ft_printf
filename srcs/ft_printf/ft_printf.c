@@ -12,15 +12,16 @@
 
 #include "ft_printf.h"
 #include <math.h>
+#include "float.h"
 #include <limits.h>
 
 void			parseFormat(s_fwpls *st)
 {
-	t_jumptable		handler_funct;
-	const char 		*fmt_start;
+	t_jumptable		handlerFunct;
+	const char 		*fmtStart;
 
-	fmt_start = st->fmt;
-	if (st->fmt++ != '\0')
+	fmtStart = st->fmt;
+	if (st->fmt++)
 	{
 		st->strt = st->fmt;
 		parseFlags(st);
@@ -28,15 +29,15 @@ void			parseFormat(s_fwpls *st)
 		parsePrecision(st, 0);
 		parseLenght(st);
 		st->specifier = *st->fmt;
-		if ((handler_funct = getHandlerFunct(st->specifier)) == NULL)
-			st->flags |= FMT_INVALID;
-		else if (!(st->flags & FMT_INVALID))
+		if ((handlerFunct = getHandlerFunct(st->specifier)) == NULL)
+			st->flags |= FLG_INVALID;
+		else if (!(st->flags & FLG_INVALID))
 		{
-			handler_funct(st);
+			handlerFunct(st);
 			st->fmt++;
 		}
 	}
-	st->strt = (st->flags & FMT_INVALID) ? fmt_start : st->fmt;
+	st->strt = (st->flags & FLG_INVALID) ? fmtStart : st->fmt; //если флаг не валидный, выведи как строку
 }
 
 int				ft_vfprintf(int fd, const char *format, va_list args)
@@ -54,13 +55,13 @@ int				ft_vfprintf(int fd, const char *format, va_list args)
 			st.fmt++;
 		else
 		{
-			buff(&st, st.strt, st.fmt - st.strt);
+			buff(&st, st.strt, st.fmt - st.strt); //запиши в буфер все что перед '%'
 			parseFormat(&st);
 			resetPrintf(&st);
 		}
 	}
 	buff(&st, st.strt, st.fmt - st.strt);
-	flushBuffer(&st);
+	freeBuffer(&st); //если строка законилась выведи буфер
 	va_end(st.args);
 	return (st.len);
 }
@@ -81,11 +82,10 @@ int 			ft_printf(char *format,...)
 
 int 	main()
 {
-//	ft_printf("%f", -56.2012685);
-	ft_printf("%.19f", 1.025978548534310421934);
-//	ft_printf("this %f float", 1.5);
+	ft_printf("%Lf\n", -56.2012685l);
+//	ft_printf("%.19f", 1.025978548534310421934);
+//	ft_printf("%lc", 128005);
 //	printf("%lu", ~0UL);
-//	printf("%lu", sizeof(unsigned long));
 //	ft_putbyte(0, ~0UL);
 	return (0);
 }

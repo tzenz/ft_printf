@@ -41,32 +41,6 @@ void		conversion(s_fwpls *st, int wc)
 	}
 }
 
-int			wCharlen(int wc)
-{
-	if (wc <= 0x7f)			//127
-		return (1);
-	else if (wc <= 0x07FF)	//2047
-		return (2);
-	else if (wc <= 0xFFFF)	//65535
-		return (3);
-	else if (wc <= 0x10FFFF)	//1114111
-		return (4);
-	return (0);
-}
-
-//size_t		wStrLen(wchar_t *wstr)
-//{
-//	size_t	wlen;
-//
-//	wlen = 0;
-//	while (*wstr != L'\0')
-//	{
-//		wlen += wCharlen(*wstr);
-//		wstr++;
-//	}
-//	return (wlen);
-//}
-
 size_t		wStrLen(wchar_t *wstr)
 {
 	size_t	wCharLen;
@@ -75,4 +49,33 @@ size_t		wStrLen(wchar_t *wstr)
 	while (*(wstr++) != L'\0')
 		wCharLen++;
 	return (wCharLen);
+}
+
+void		printWChar(s_fwpls *st)
+{
+    if (st->flags & WIDTH_FLAG && !(st->flags & DASH_FLAG))
+        padWidth(st, 1);
+    conversion(st, (int)va_arg(st->args, int));
+    if (st->flags & WIDTH_FLAG && st->flags & DASH_FLAG)
+        padWidth(st, 1);
+}
+
+void		printWStr(s_fwpls *st)
+{
+    wchar_t *wstr;
+    size_t 	wslen;
+
+    if ((wstr = va_arg(st->args, wchar_t *)) == NULL)
+        wstr = L"(null)";
+    wslen = wStrLen(wstr);
+    if (st->precision < 0)
+        st->precision = wslen;
+    st->precision = (st->precision > wslen) ? (int)wslen : st->precision;
+    wslen = (st->flags & PRECI_FLAG) ? st->precision : wslen;
+    if (st->flags & WIDTH_FLAG && !(st->flags & DASH_FLAG))
+        padWidth(st, wslen);
+    while (*wstr && wslen--)
+        conversion(st, *(wstr++));
+    if (st->flags & WIDTH_FLAG && (st->flags & DASH_FLAG))
+        padWidth(st, wslen);
 }

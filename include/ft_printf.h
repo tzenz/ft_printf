@@ -35,15 +35,12 @@
 # define WIDTH_FLAG		32768 // ширина
 # define PRECI_FLAG		65536 // точность
 # define LEN_OB_FLAG	131072 // int and long...
-# define FMT_INVALID	262144
+# define FLG_INVALID	262144
 
 # define BUF_SIZE 4096
 # define ULL unsigned long long
 # define MOD(a) (((a) > 0) ? (a) : -(a))
 #define UPP(x) ((x)=='X'||(x)=='F'||(x)=='E'||(x)=='G'||(x)=='A')
-
-void				ft_putbyte(int x);
-uintmax_t			ft_power(uintmax_t base, uintmax_t power);
 
 typedef struct		s_fwpls
 {
@@ -70,6 +67,8 @@ union				u_union
 	double			d;
 }					u;
 
+void 				ft_putbyte(intmax_t sign, uintmax_t unsing);
+
 typedef void		(*t_jumptable)(s_fwpls *st);
 
 int 				ft_printf(char *format,...);
@@ -82,14 +81,15 @@ t_jumptable			getHandlerFunct(char c);
 
 void				putPrecent(s_fwpls *st);
 
-void				flushBuffer(s_fwpls *st);
+void				freeBuffer(s_fwpls *st);
 void				buff(s_fwpls *st, const void *s, size_t nbyte);
-void				padWidth(s_fwpls *st, int arg_width);
+void				padWidth(s_fwpls *st, int argWidth);
 void				resetPrintf(s_fwpls *st);
 
-intmax_t			nbrLen(s_fwpls *st, intmax_t n);
+int     			nbrLen(s_fwpls *st, intmax_t n);
+int     		    unbrLen(s_fwpls *st, uintmax_t n);
 void				intPadWidth(s_fwpls *st, int totalLen, int printPL_SP);
-void				pad(s_fwpls *st, int pad_len, char pad_char);
+void				pad(s_fwpls *st, int padLen, char padChar);
 void				padFlags(s_fwpls *st, int printPL_SP);
 void				itoaBase(s_fwpls *st, uintmax_t nbr, int len);
 
@@ -106,6 +106,6 @@ void				printOct(s_fwpls *st);
 void				printHex(s_fwpls *st);
 
 void				printDouble(s_fwpls *st);
-void				convertDouble(s_fwpls *st, long double nbr, size_t intLen, size_t totalLen);
+void				convertDouble(s_fwpls *st, long double nbr, size_t intLen);
 
 #endif

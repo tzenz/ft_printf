@@ -16,6 +16,9 @@
 # define ULLMAX	(~0UL)
 # define LLMAX_MIN ((long long)1 << 63)
 
+#include "float.h"
+#include "limits.h"
+
 void		padFlags(s_fwpls *st, int printPL_SP)
 {
 	if (st->sign)
@@ -48,7 +51,7 @@ void			itoaBase(s_fwpls *st, uintmax_t nbr, int len)
     c = (UPP(st->specifier)) ? 'A' : 'a';
 	while (tmpLen-- > 0)
 	{
-		if (st->flags & CONV_DOUBLE && prec-- == 0)
+		if (st->flags & CONV_DOUBLE && prec-- == 0) //если исп sr->prec будет ставить лишнюю точку
 			break;
 		str[tmpLen] = (tmp % st->base < 10) ? tmp % st->base + '0' : tmp % st->base + c - 10;
 		tmp /= st->base;
@@ -89,9 +92,9 @@ long double		roundFrac(s_fwpls *st, long double frac)
 			   ? (frac / st->base) + 1 : frac / st->base;
 	else
 	{
-		printf("%Lf\n", frac);
-		printf("%lu\n", ((uintmax_t) FMOD(frac) % st->base));
-		return ((uintmax_t) FMOD(frac) % st->base >= (uintmax_t) (st->base / 2))
+//		printf("%Lf\n", frac);
+//		printf("%lu\n", ((intmax_t)FMOD(frac) % st->base));
+		return ((uintmax_t)FMOD(frac) % st->base >= (uintmax_t) (st->base / 2))
 			   ? (frac / st->base) + 1 : frac / st->base;
 	}
 }
@@ -106,15 +109,17 @@ void			convertDouble(s_fwpls *st, long double nbr, size_t intLen)
 		itoaBase(st, (uintmax_t)MOD(nbr), intLen);
 	st->flags |= CONV_DOUBLE;
 	if (st->precision >= 19)
-		frac = powerLong(st->base, st->precision + 1, FMOD(nbr));
+		frac = roundFrac(st, powerLong(st->base, st->precision + 1, FMOD(nbr)));
 	else
-		frac = power(st->base, st->precision + 1, FMOD(nbr));
-	frac = roundFrac(st, frac);
-	if (st->precision == 6 && (uintmax_t)frac / 1000000 > (uintmax_t)MOD(nbr))
+		frac = roundFrac(st, power(st->base, st->precision + 1, FMOD(nbr)));
+	if (((uintmax_t)frac / ft_pow(10, st->precision)) > (uintmax_t)MOD(nbr))
 	{
-		st->buff[st->len - 1]++;
-		buff(st, ".", 1);
-		itoaBase(st, (uintmax_t)FMOD(frac), st->precision);
+		if (st->precision != 0)
+		{
+			st->buff[st->len - 1]++;
+			buff(st, ".", 1);
+			itoaBase(st, (uintmax_t) FMOD(frac), st->precision);
+		}
 	}
 	else if (st->precision != 0)
 	{

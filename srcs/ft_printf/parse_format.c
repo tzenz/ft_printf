@@ -38,22 +38,22 @@ void		parseFlags(s_fwpls *st)
 
 void		parseWidth(s_fwpls *st) //в ориг pritf width * = -10, '-' считается флагом
 {
-	int		tentativeWight;
+	int		preWight;
 
-	if (!(st->flags & FMT_INVALID) && (*st->fmt == '*' || ft_isdigit(*st->fmt)))
+	if (!(st->flags & FLG_INVALID) && (*st->fmt == '*' || ft_isdigit(*st->fmt)))
 	{
-		if (!(st->flags & FMT_INVALID) && *st->fmt == '*')
+		if (!(st->flags & FLG_INVALID) && *st->fmt == '*')
 		{
 			st->fmt++;
-			tentativeWight = va_arg(st->args, int);
-			st->flags |= (tentativeWight < 0) ? DASH_FLAG : 0;
-			st->width = MOD(tentativeWight);
+			preWight = va_arg(st->args, int);
+			st->flags |= (preWight < 0) ? DASH_FLAG : 0;
+			st->width = MOD(preWight);
 			st->flags |= WIDTH_FLAG;
 		}
-		if (!(st->flags & FMT_INVALID) && ft_isdigit(*st->fmt))
+		if (!(st->flags & FLG_INVALID) && ft_isdigit(*st->fmt))
 		{
-			st->flags |= (st->flags & WIDTH_FLAG) ? FMT_INVALID : 0;
-			while (!(st->flags & FMT_INVALID) && ft_isdigit(*st->fmt))
+			st->flags |= (st->flags & WIDTH_FLAG) ? FLG_INVALID : 0;
+			while (!(st->flags & FLG_INVALID) && ft_isdigit(*st->fmt))
 				st->width = st->width * 10 + (*(st->fmt++) - '0');
 			st->flags |= WIDTH_FLAG;
 		}
@@ -63,22 +63,22 @@ void		parseWidth(s_fwpls *st) //в ориг pritf width * = -10, '-' счита�
 
 void		parsePrecision(s_fwpls *st, int recurseLevel)
 {
-	if (!(st->flags & FMT_INVALID) && (*st->fmt == '.' || recurseLevel > 0))
+	if (!(st->flags & FLG_INVALID) && (*st->fmt == '.' || recurseLevel > 0))
 	{
 		st->fmt = (*st->fmt == '.') ? st->fmt + 1 : st->fmt;
 		if (*st->fmt == '*' || ft_isdigit(*st->fmt))
 		{
-			st->flags |= (st->flags & PRECI_FLAG) ? FMT_INVALID : 0;
-			if (!(st->flags & FMT_INVALID) && *st->fmt == '*')
+			st->flags |= (st->flags & PRECI_FLAG) ? FLG_INVALID : 0;
+			if (!(st->flags & FLG_INVALID) && *st->fmt == '*')
 			{
 				st->fmt++;
 				st->precision = va_arg(st->args, int);
 				st->flags |= PRECI_FLAG;
 			}
-			if (!(st->flags & FMT_INVALID) && ft_isdigit(*st->fmt))
+			if (!(st->flags & FLG_INVALID) && ft_isdigit(*st->fmt))
 			{
-				st->flags |= (st->flags & PRECI_FLAG) ? FMT_INVALID : 0;
-				while (!(st->flags & FMT_INVALID) && ft_isdigit(*st->fmt))
+				st->flags |= (st->flags & PRECI_FLAG) ? FLG_INVALID : 0;
+				while (!(st->flags & FLG_INVALID) && ft_isdigit(*st->fmt))
 					st->precision = st->precision * 10 + (*(st->fmt++) - '0');
 				st->flags |= PRECI_FLAG;
 			}
@@ -100,7 +100,7 @@ void		parseLongLenght(s_fwpls *st, char c, int sFlag, int dFlag)
 				st->flags |= dFlag;
 			}
 			else
-				st->flags |= FMT_INVALID;
+				st->flags |= FLG_INVALID;
 		}
 		else
 		{
@@ -112,7 +112,7 @@ void		parseLongLenght(s_fwpls *st, char c, int sFlag, int dFlag)
 
 void		parseLenght(s_fwpls *st)
 {
-	if (!(st->flags & FMT_INVALID) && IS_LEN(*st->fmt))
+	if (!(st->flags & FLG_INVALID) && IS_LEN(*st->fmt))
 	{
 		parseLongLenght(st, 'h', H_FLAG, HH_FLAG);
 		parseLongLenght(st, 'l', L_FLAG, LL_FLAG);
@@ -127,11 +127,11 @@ void		parseLenght(s_fwpls *st)
 				st->flags |= LEN_OB_FLAG;
 			}
 			else
-				st->flags |= FMT_INVALID;
+				st->flags |= FLG_INVALID;
 		}
 		st->fmt++;
 		parseLenght(st);
 	}
-	else if (*st->fmt == '.') // ?????????? точка после длинны, по разному реагирует
-		st->flags |= FMT_INVALID;
+//	else if (*st->fmt == '.') // ?????????? точка после длинны, по разному реагирует
+//		st->flags |= FLG_INVALID;
 }

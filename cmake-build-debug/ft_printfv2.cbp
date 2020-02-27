@@ -45,8 +45,7 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/Users/tzenz/ft_printfv2/include"/>
-					<Add directory="/Users/tzenz/ft_printfv2/srcs/ft_printf"/>
-					<Add directory="/Users/tzenz/ft_printfv2/srcs/ft_printf/pft/src"/>
+					<Add directory="/Users/tzenz/ft_printfv2/pft/src"/>
 					<Add directory="/Users/tzenz/ft_printfv2/srcs/libft/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
@@ -70,8 +69,7 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/Users/tzenz/ft_printfv2/include"/>
-					<Add directory="/Users/tzenz/ft_printfv2/srcs/ft_printf"/>
-					<Add directory="/Users/tzenz/ft_printfv2/srcs/ft_printf/pft/src"/>
+					<Add directory="/Users/tzenz/ft_printfv2/pft/src"/>
 					<Add directory="/Users/tzenz/ft_printfv2/srcs/libft/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
@@ -91,19 +89,52 @@
 		<Unit filename="/Users/tzenz/ft_printfv2/include/ft_printf.h">
 			<Option target="ft_printfv2"/>
 		</Unit>
-		<Unit filename="/Users/tzenz/ft_printfv2/main.c">
+		<Unit filename="/Users/tzenz/ft_printfv2/pft/configurations/42fc/unit_tests.42fc.c">
+			<Option target="ft_printfv2"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfv2/pft/src/help.c">
+			<Option target="ft_printfv2"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfv2/pft/src/help.h">
+			<Option target="ft_printfv2"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfv2/pft/src/help_conf.c">
+			<Option target="ft_printfv2"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfv2/pft/src/history.c">
+			<Option target="ft_printfv2"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfv2/pft/src/main.c">
+			<Option target="ft_printfv2"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfv2/pft/src/options.c">
+			<Option target="ft_printfv2"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfv2/pft/src/print.c">
+			<Option target="ft_printfv2"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfv2/pft/src/show_disabled_postprocess.c">
+			<Option target="ft_printfv2"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfv2/pft/src/test.c">
+			<Option target="ft_printfv2"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfv2/pft/src/test.h">
+			<Option target="ft_printfv2"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfv2/pft/src/unit_tests_indexed.c">
+			<Option target="ft_printfv2"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfv2/pft/src/utils.c">
+			<Option target="ft_printfv2"/>
+		</Unit>
+		<Unit filename="/Users/tzenz/ft_printfv2/pft/unit_tests.c">
 			<Option target="ft_printfv2"/>
 		</Unit>
 		<Unit filename="/Users/tzenz/ft_printfv2/srcs/ft_printf/ft_printf.c">
 			<Option target="ft_printfv2"/>
 		</Unit>
-		<Unit filename="/Users/tzenz/ft_printfv2/srcs/ft_printf/ft_printf.h">
-			<Option target="ft_printfv2"/>
-		</Unit>
 		<Unit filename="/Users/tzenz/ft_printfv2/srcs/ft_printf/ft_putbyte.c">
-			<Option target="ft_printfv2"/>
-		</Unit>
-		<Unit filename="/Users/tzenz/ft_printfv2/srcs/ft_printf/libft.h">
 			<Option target="ft_printfv2"/>
 		</Unit>
 		<Unit filename="/Users/tzenz/ft_printfv2/srcs/ft_printf/other_function.c">
@@ -113,48 +144,6 @@
 			<Option target="ft_printfv2"/>
 		</Unit>
 		<Unit filename="/Users/tzenz/ft_printfv2/srcs/ft_printf/parse_specifier.c">
-			<Option target="ft_printfv2"/>
-		</Unit>
-		<Unit filename="/Users/tzenz/ft_printfv2/srcs/ft_printf/pft/configurations/42fc/unit_tests.42fc.c">
-			<Option target="ft_printfv2"/>
-		</Unit>
-		<Unit filename="/Users/tzenz/ft_printfv2/srcs/ft_printf/pft/src/help.c">
-			<Option target="ft_printfv2"/>
-		</Unit>
-		<Unit filename="/Users/tzenz/ft_printfv2/srcs/ft_printf/pft/src/help.h">
-			<Option target="ft_printfv2"/>
-		</Unit>
-		<Unit filename="/Users/tzenz/ft_printfv2/srcs/ft_printf/pft/src/help_conf.c">
-			<Option target="ft_printfv2"/>
-		</Unit>
-		<Unit filename="/Users/tzenz/ft_printfv2/srcs/ft_printf/pft/src/history.c">
-			<Option target="ft_printfv2"/>
-		</Unit>
-		<Unit filename="/Users/tzenz/ft_printfv2/srcs/ft_printf/pft/src/main.c">
-			<Option target="ft_printfv2"/>
-		</Unit>
-		<Unit filename="/Users/tzenz/ft_printfv2/srcs/ft_printf/pft/src/options.c">
-			<Option target="ft_printfv2"/>
-		</Unit>
-		<Unit filename="/Users/tzenz/ft_printfv2/srcs/ft_printf/pft/src/print.c">
-			<Option target="ft_printfv2"/>
-		</Unit>
-		<Unit filename="/Users/tzenz/ft_printfv2/srcs/ft_printf/pft/src/show_disabled_postprocess.c">
-			<Option target="ft_printfv2"/>
-		</Unit>
-		<Unit filename="/Users/tzenz/ft_printfv2/srcs/ft_printf/pft/src/test.c">
-			<Option target="ft_printfv2"/>
-		</Unit>
-		<Unit filename="/Users/tzenz/ft_printfv2/srcs/ft_printf/pft/src/test.h">
-			<Option target="ft_printfv2"/>
-		</Unit>
-		<Unit filename="/Users/tzenz/ft_printfv2/srcs/ft_printf/pft/src/unit_tests_indexed.c">
-			<Option target="ft_printfv2"/>
-		</Unit>
-		<Unit filename="/Users/tzenz/ft_printfv2/srcs/ft_printf/pft/src/utils.c">
-			<Option target="ft_printfv2"/>
-		</Unit>
-		<Unit filename="/Users/tzenz/ft_printfv2/srcs/ft_printf/pft/unit_tests.c">
 			<Option target="ft_printfv2"/>
 		</Unit>
 		<Unit filename="/Users/tzenz/ft_printfv2/srcs/ft_printf/print_char_str.c">
@@ -169,7 +158,7 @@
 		<Unit filename="/Users/tzenz/ft_printfv2/srcs/ft_printf/print_int.c">
 			<Option target="ft_printfv2"/>
 		</Unit>
-		<Unit filename="/Users/tzenz/ft_printfv2/srcs/ft_printf/print_precent.c">
+		<Unit filename="/Users/tzenz/ft_printfv2/srcs/ft_printf/print_percent.c">
 			<Option target="ft_printfv2"/>
 		</Unit>
 		<Unit filename="/Users/tzenz/ft_printfv2/srcs/ft_printf/print_signed_int2.c">
@@ -254,9 +243,6 @@
 			<Option target="ft_printfv2"/>
 		</Unit>
 		<Unit filename="/Users/tzenz/ft_printfv2/srcs/libft/ft_pow.c">
-			<Option target="ft_printfv2"/>
-		</Unit>
-		<Unit filename="/Users/tzenz/ft_printfv2/srcs/libft/ft_power.c">
 			<Option target="ft_printfv2"/>
 		</Unit>
 		<Unit filename="/Users/tzenz/ft_printfv2/srcs/libft/ft_putchar.c">

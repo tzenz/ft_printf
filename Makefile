@@ -25,14 +25,17 @@ PTF_SRC =	ft_printf.c\
 			print_signed_int2.c\
 			print_utf.c\
 
-CFILES = $(addprefix $(PTF_DIR), $(PTF_SRC))
+CFILES = $(patsubst %, $(PTF_DIR)%, $(PTF_SRC))
 PTF_OBJ = $(patsubst %.c, %.o, $(PTF_SRC))
-INCLUDE = -I ./include
+OBJ_DIR = ./obj/
+DIR = ./obj
+OFILES = $(addprefix $(OBJ_DIR), $(PTF_OBJ))
+SRC_INC = -I ./include
 FLAGS = -Wall -Wextra -Werror
 
 #libft
-LFT_INC = -I $(LFT_DIR)include/
 LFT_DIR = ./srcs/libft/
+LFT_INC = -I $(LFT_DIR)include/
 LFT_OBJ = $(patsubst %.c, %.o, $(LFT_DIR)*.c)
 LFT_LIBFT = -I $(LFT_DIR)libft.a
 
@@ -42,22 +45,27 @@ RESET = \033[0m
 
 all:$(NAME)
 
-$(NAME): $(LFT_OBJ) $(PTF_OBJ)
+$(NAME): $(LFT_OBJ) $(PTF_OBJ) $(OBJ_DIR)
 	@echo "printf: $(GREEN)Creating libftprintf...$(RESET)"
-	@ar rc $(NAME) *.o
+	@mv *.o $(OBJ_DIR)
+	@ar rc $(NAME) $(OFILES) $(LFT_OBJ)
 	@ranlib $(NAME)
+
+$(OBJ_DIR):
+	@mkdir $(OBJ_DIR)
 
 $(LFT_DIR)%.o: $(LFT_DIR)%.c
 	@echo "printf: $(GREEN)Creating libft...$(RESET)"
 	@make -C $(LFT_DIR)
 
-$(PTF_OBJ)%.o: $(CFILES)
-	@gcc -c $(INCLUDE) $(LFT_INC) $(CFILES) $(LFT_LIBFT)
+$(PTF_OBJ): $(CFILES)
+	@gcc -c $(SRC_INC) $(LFT_INC) $(CFILES) $(LFT_LIBFT)
 
 clean:
 	@echo "printf: $(RED)Deleting libft obj...$(RESET)"
 	@make clean -C $(LFT_DIR)
 	@echo "printf: $(RED)Deleting srcs obj...$(RESET)"
+	@rm -rf $(OBJ_DIR)
 	@rm -f *.o
 
 fclean: clean

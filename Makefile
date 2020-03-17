@@ -6,13 +6,12 @@
 #    By: tzenz <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/08/12 18:25:28 by tzenz             #+#    #+#              #
-#    Updated: 2020/01/30 13:23:39 by tzenz            ###   ########.fr        #
+#    Updated: 2020/03/05 14:11:00 by tzenz            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-#printf
 NAME = libftprintf.a
-PTF_DIR = ./srcs/ft_printf/
+PTF_DIR = ./srcs/
 PTF_SRC =	ft_printf.c\
 			other_function.c\
 			parse_format.c\
@@ -21,23 +20,26 @@ PTF_SRC =	ft_printf.c\
 			print_double.c\
 			print_hex_oct.c\
 			print_int.c\
-			print_percent.c\
-			print_signed_int2.c\
+			itoa_double.c\
 			print_utf.c\
+			print_binary.c\
+			macro.c\
 
 CFILES = $(patsubst %, $(PTF_DIR)%, $(PTF_SRC))
 PTF_OBJ = $(patsubst %.c, %.o, $(PTF_SRC))
 OBJ_DIR = ./obj/
-DIR = ./obj
-OFILES = $(addprefix $(OBJ_DIR), $(PTF_OBJ))
-SRC_INC = -I ./include
+OFILES = $(patsubst %, $(OBJ_DIR)%, $(PTF_OBJ))
+SRC_INC = -I ./includes/
+INC_FT = ./includes/ft_printf.h
 FLAGS = -Wall -Wextra -Werror
 
-#libft
 LFT_DIR = ./srcs/libft/
-LFT_INC = -I $(LFT_DIR)include/
+LFT_INC = -I $(LFT_DIR)includes/
 LFT_OBJ = $(patsubst %.c, %.o, $(LFT_DIR)*.c)
-LFT_LIBFT = -I $(LFT_DIR)libft.a
+
+LFT_LIBFT = $(LFT_DIR)libft.a
+
+INC_LIB = ./srcs/libft/includes/libft.h
 
 GREEN = \033[0;32m
 RED = \033[0;31m
@@ -45,33 +47,33 @@ RESET = \033[0m
 
 all:$(NAME)
 
-$(NAME): $(LFT_OBJ) $(PTF_OBJ) $(OBJ_DIR)
+$(NAME): $(OBJ_DIR) $(LFT_OBJ) $(OFILES)
 	@echo "printf: $(GREEN)Creating libftprintf...$(RESET)"
-	@mv *.o $(OBJ_DIR)
-	@ar rc $(NAME) $(OFILES) $(LFT_OBJ)
+	@ar rc $(NAME) $(OFILES)
 	@ranlib $(NAME)
+
+$(OBJ_DIR)%.o: $(PTF_DIR)%.c $(INC_FT)
+	@gcc $(FLAGS) $(SRC_INC) $(LFT_INC) -c $(CFILES)
+	@mv *.o $(OBJ_DIR)
 
 $(OBJ_DIR):
 	@mkdir $(OBJ_DIR)
 
-$(LFT_DIR)%.o: $(LFT_DIR)%.c
+$(LFT_DIR)%.o: $(LFT_DIR)%.c $(INC_LIB)
 	@echo "printf: $(GREEN)Creating libft...$(RESET)"
 	@make -C $(LFT_DIR)
-
-$(PTF_OBJ): $(CFILES)
-	@gcc -c $(SRC_INC) $(LFT_INC) $(CFILES) $(LFT_LIBFT)
+	@cp $(LFT_LIBFT) ./$(NAME)
 
 clean:
 	@echo "printf: $(RED)Deleting libft obj...$(RESET)"
 	@make clean -C $(LFT_DIR)
 	@echo "printf: $(RED)Deleting srcs obj...$(RESET)"
 	@rm -rf $(OBJ_DIR)
-	@rm -f *.o
 
 fclean: clean
 	@echo "printf: $(RED)Deleting libft.a...$(RESET)"
 	@make fclean -C srcs/libft
-	@echo "printf: $(RED)Deleting libftprintf...$(RESET)"
+	@echo "printf: $(RED)Deleting libftprintf.a...$(RESET)"
 	@rm -f $(NAME)
 
 re: fclean clean all

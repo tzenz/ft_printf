@@ -1,3 +1,0 @@
-/Users/tzenz/ft_printfCur/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/tzenz/ft_printfCur/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/tzenz/ft_printfCur/cmake-build-debug/CMakeFiles/ft_printfCur.dir

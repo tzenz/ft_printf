@@ -12,7 +12,7 @@
 
 NAME = libft.a
 
-FLAGS = -Wall -Wextra -Werror -I include/
+FLAGS = -Wall -Wextra -Werror -I includes/
 
 SRC =   ft_atoi_base.c\
         ft_strchrs.c\
@@ -84,7 +84,7 @@ SRC =   ft_atoi_base.c\
 		ft_lstiter.c\
 		ft_lstmap.c\
 
-INC = ./include/libft.h
+INC = ./includes/libft.h
 
 OBJ = $(patsubst %.c, %.o, $(SRC))
 

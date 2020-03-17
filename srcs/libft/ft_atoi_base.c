@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static int		ft_power(int nb, int power)
+static int	ft_power(int nb, int power)
 {
 	if (power == 0)
 		return (1);
@@ -61,7 +61,7 @@ int			ft_atoi_base(char *nb, int base)
 	if (base == 10)
 		return (ft_atoi(nb));
 	while (*nb == ' ' || *nb == '\t' || *nb == '\n'
-		   || *nb == '\v' || *nb == '\r' || *nb == '\f')
+			|| *nb == '\v' || *nb == '\r' || *nb == '\f')
 		nb++;
 	result = 0;
 	length = length_number(nb, base) - 1;
